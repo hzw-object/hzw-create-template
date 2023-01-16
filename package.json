@@ -1,0 +1,63 @@
+{
+  "publisher": "hzw-create-template",
+  "name": "hzw-create-template",
+  "displayName": "hzw-create-template",
+  "description": "用于创建vue文件代码模版",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "repository": {
+    "url": "https://github.com/hzw-object/hzw-create-template"
+  },
+  "icon": "images/icon.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createFileGenerator",
+        "title": "创建模版代码"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.createFileGenerator",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "minimist": "^1.2.6",
+    "mkdirp": "^0.5.1",
+    "node-mkdirfilep": "^0.0.2"
+  }
+}
